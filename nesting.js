@@ -51,8 +51,16 @@ var employees = [
 */
 
 //Code Here
-
-
+const employeeUpdater = () => {
+  employees.filter( (element, index, arr) => {
+  if(element.firstName === 'Theo'){
+    employees.splice( index, 1)
+  } else if (element.firstName === 'Lorie'){
+    element.department = 'HR'
+  }
+});
+return employees
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -69,7 +77,11 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates (array){
+  return array.sort().filter(function(item, position, arr) {
+    return !position || item != arr[position - 1];
+  })
+}
 
 
 ////////// PROBLEM 3 //////////
